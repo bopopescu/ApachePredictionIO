@@ -37,3 +37,6 @@ Documentation regarding Installation of apache-prediction-io and Running the app
    apache-prediction-io running and started so that we can deploy our application.
           
 4. Once the eventserver is running open the ECOM Project in eclipse and run it on the server .
+
+5. Below is the snapshot of the application :<br />
+   /AppFront.jpg 
