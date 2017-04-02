@@ -1,0 +1,41 @@
+2017-03-22 01:03:26,863 INFO  org.apache.predictionio.tools.console.App$ [main] -                 Name |   ID |                                                       Access Key | Allowed Event(s)
+2017-03-22 01:03:26,881 INFO  org.apache.predictionio.tools.console.App$ [main] -                 ecom |    2 | jBhRupZa7FK0fKGproNFMiraoa0tx3dYPwnwJavnQdG3quysEhECG1hjIss0cgMk | (all)
+2017-03-22 01:03:26,883 INFO  org.apache.predictionio.tools.console.App$ [main] -               myapp1 |    1 | Ym4y6Utt1XE91ZABcVQBsBaZJgZoqX6a5p7JF9-3N6r_yKgvpbc_NQN4_BnXZgZH | (all)
+2017-03-22 01:03:26,884 INFO  org.apache.predictionio.tools.console.App$ [main] - Finished listing 2 app(s).
+2017-03-23 17:18:11,699 INFO  org.apache.predictionio.tools.console.App$ [main] -                 Name |   ID |                                                       Access Key | Allowed Event(s)
+2017-03-23 17:18:11,715 INFO  org.apache.predictionio.tools.console.App$ [main] -                 ecom |    2 | jBhRupZa7FK0fKGproNFMiraoa0tx3dYPwnwJavnQdG3quysEhECG1hjIss0cgMk | (all)
+2017-03-23 17:18:11,717 INFO  org.apache.predictionio.tools.console.App$ [main] -               myapp1 |    1 | Ym4y6Utt1XE91ZABcVQBsBaZJgZoqX6a5p7JF9-3N6r_yKgvpbc_NQN4_BnXZgZH | (all)
+2017-03-23 17:18:11,718 INFO  org.apache.predictionio.tools.console.App$ [main] - Finished listing 2 app(s).
+2017-03-25 02:19:42,792 INFO  org.apache.predictionio.tools.console.App$ [main] -                 Name |   ID |                                                       Access Key | Allowed Event(s)
+2017-03-25 02:19:42,820 INFO  org.apache.predictionio.tools.console.App$ [main] -                 ecom |    2 | jBhRupZa7FK0fKGproNFMiraoa0tx3dYPwnwJavnQdG3quysEhECG1hjIss0cgMk | (all)
+2017-03-25 02:19:42,823 INFO  org.apache.predictionio.tools.console.App$ [main] -               myapp1 |    1 | Ym4y6Utt1XE91ZABcVQBsBaZJgZoqX6a5p7JF9-3N6r_yKgvpbc_NQN4_BnXZgZH | (all)
+2017-03-25 02:19:42,824 INFO  org.apache.predictionio.tools.console.App$ [main] - Finished listing 2 app(s).
+2017-03-25 02:25:13,242 INFO  org.apache.predictionio.tools.console.App$ [main] -                 Name |   ID |                                                       Access Key | Allowed Event(s)
+2017-03-25 02:25:13,253 INFO  org.apache.predictionio.tools.console.App$ [main] -                 ecom |    2 | jBhRupZa7FK0fKGproNFMiraoa0tx3dYPwnwJavnQdG3quysEhECG1hjIss0cgMk | (all)
+2017-03-25 02:25:13,255 INFO  org.apache.predictionio.tools.console.App$ [main] -               myapp1 |    1 | Ym4y6Utt1XE91ZABcVQBsBaZJgZoqX6a5p7JF9-3N6r_yKgvpbc_NQN4_BnXZgZH | (all)
+2017-03-25 02:25:13,256 INFO  org.apache.predictionio.tools.console.App$ [main] - Finished listing 2 app(s).
+2017-03-25 03:44:19,022 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-25 03:44:19,027 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-25 03:44:19,027 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-25 03:44:19,028 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-25 03:44:19,029 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-25 03:44:23,934 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid command: assemblyPackageDependency[0m
+2017-03-25 03:44:23,935 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid project ID: assemblyPackageDependency[0m
+2017-03-25 03:44:23,935 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mExpected ':' (if selecting a configuration)[0m
+2017-03-25 03:44:23,935 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid key: assemblyPackageDependency (similar: sbtDependency)[0m
+2017-03-25 03:44:23,935 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0massemblyPackageDependency[0m
+2017-03-25 03:44:23,936 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0m                         ^[0m
+2017-03-25 03:44:23,970 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2017-03-25 03:53:13,598 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using existing engine manifest JSON at /home/giri/Documents/CCProject/ecom/data/manifest.json
+2017-03-25 03:53:13,602 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-25 03:53:13,604 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-25 03:53:13,604 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-25 03:53:13,606 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-25 03:53:13,607 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-25 03:53:17,780 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid command: assemblyPackageDependency[0m
+2017-03-25 03:53:17,780 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid project ID: assemblyPackageDependency[0m
+2017-03-25 03:53:17,781 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mExpected ':' (if selecting a configuration)[0m
+2017-03-25 03:53:17,781 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid key: assemblyPackageDependency (similar: sbtDependency)[0m
+2017-03-25 03:53:17,781 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0massemblyPackageDependency[0m
+2017-03-25 03:53:17,781 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0m                         ^[0m
+2017-03-25 03:53:17,819 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.

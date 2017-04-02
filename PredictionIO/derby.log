@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Mar 01 16:00:10 IST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-015a-896b-868c-00000d2f6578 
+on database directory /home/arya/softwares/PredictionIO/metastore_db with class loader org.apache.spark.sql.hive.client.IsolatedClientLoader$$anon$1@6889f56f 
+Loaded from file:/home/arya/softwares/spark/jars/derby-10.12.1.1.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_121-8u121-b13-0ubuntu1.16.04.2-b13
+user.dir=/home/arya/softwares/PredictionIO
+os.name=Linux
+os.arch=amd64
+os.version=4.8.0-39-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

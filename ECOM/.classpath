@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry exported="true" kind="lib" path="/home/giri/apache-predictionio-core_2.10-0.10.0-incubating.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/giri/apache-predictionio-common_2.10-0.10.0-incubating.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/giri/apache-predictionio-data_2.10-0.10.0-incubating.jar"/>
+	<classpathentry exported="true" kind="lib" path="/home/giri/Documents/CCProject/PredictionIO/target/scala-2.10/predictionio_2.10-0.1-SNAPSHOT.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry exported="true" kind="lib" path="/home/giri/Downloads/org.json.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v7.0"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

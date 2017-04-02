@@ -1,0 +1,952 @@
+2017-03-16 15:59:09,600 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 15:59:48,203 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 15:59:48,209 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 15:59:48,210 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 15:59:48,256 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 15:59:48,332 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 15:59:48,333 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 15:59:48,367 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 15:59:49,719 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 15:59:49,721 ERROR org.apache.predictionio.tools.console.Console$ [main] - Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server. (com.mysql.jdbc.exceptions.jdbc4.CommunicationsException)
+com.mysql.jdbc.exceptions.jdbc4.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.SQLError.createCommunicationsException(SQLError.java:983)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:339)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2252)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2084)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at com.mysql.jdbc.StandardSocketFactory.connect(StandardSocketFactory.java:214)
+	at com.mysql.jdbc.MysqlIO.<init>(MysqlIO.java:298)
+	... 37 more
+2017-03-16 15:59:49,725 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 15:59:49,731 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: MYSQL; Type: jdbc; Configuration: PASSWORD -> giri, URL -> jdbc:mysql://localhost/pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 16:01:14,172 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 16:01:45,526 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 16:01:45,532 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 16:01:45,533 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 16:01:45,559 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 16:01:45,641 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 16:01:45,642 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 16:01:45,684 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 16:01:47,198 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 16:01:47,201 ERROR org.apache.predictionio.tools.console.Console$ [main] - Access denied for user 'pio'@'localhost' (using password: YES) (java.sql.SQLException)
+java.sql.SQLException: Access denied for user 'pio'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:959)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3870)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3806)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1686)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2084)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 16:01:47,206 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 16:01:47,213 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: MYSQL; Type: jdbc; Configuration: PASSWORD -> giri, URL -> jdbc:mysql://localhost/pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 16:03:34,125 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 16:03:34,130 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 16:03:34,131 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 16:03:34,153 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 16:03:34,215 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 16:03:34,215 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 16:03:34,253 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 16:03:35,795 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 16:03:35,797 ERROR org.apache.predictionio.tools.console.Console$ [main] - Access denied for user 'pio'@'localhost' (using password: YES) (java.sql.SQLException)
+java.sql.SQLException: Access denied for user 'pio'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:959)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3870)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3806)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1686)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2084)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 16:03:35,802 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 16:03:35,808 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: MYSQL; Type: jdbc; Configuration: PASSWORD -> ImArya, URL -> jdbc:mysql://localhost/pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 16:04:27,441 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 16:26:07,844 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 16:26:09,452 ERROR org.apache.predictionio.data.storage.Storage$ [main] - POSTGRESQL is not a configured storage source.
+2017-03-16 16:26:09,456 ERROR org.apache.predictionio.data.storage.Storage$ [main] - POSTGRESQL is not a configured storage source.
+2017-03-16 16:26:09,459 ERROR org.apache.predictionio.data.storage.Storage$ [main] - POSTGRESQL is not a configured storage source.
+2017-03-16 16:26:10,963 ERROR org.apache.predictionio.data.storage.Storage$ [main] - Error initializing storage client for source 
+java.util.NoSuchElementException: key not found: PIO_STORAGE_SOURCES__TYPE
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:58)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:58)
+	at org.apache.predictionio.data.storage.Storage$.org$apache$predictionio$data$storage$Storage$$updateS2CM(Storage.scala:244)
+	at org.apache.predictionio.data.storage.Storage$$anonfun$sourcesToClientMeta$1.apply(Storage.scala:212)
+	at org.apache.predictionio.data.storage.Storage$$anonfun$sourcesToClientMeta$1.apply(Storage.scala:212)
+	at scala.collection.mutable.MapLike$class.getOrElseUpdate(MapLike.scala:189)
+	at scala.collection.mutable.AbstractMap.getOrElseUpdate(Map.scala:91)
+	at org.apache.predictionio.data.storage.Storage$.sourcesToClientMeta(Storage.scala:212)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:281)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getLEvents(Storage.scala:388)
+	at org.apache.predictionio.data.api.EventServer$.createEventServer(EventServer.scala:617)
+	at org.apache.predictionio.tools.console.Console$.eventserver(Console.scala:893)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:728)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 16:26:46,886 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 16:26:47,512 ERROR org.apache.predictionio.data.storage.Storage$ [main] - PostgreSQL is not a configured storage source.
+2017-03-16 16:26:47,521 ERROR org.apache.predictionio.data.storage.Storage$ [main] - PostgreSQL is not a configured storage source.
+2017-03-16 16:26:47,524 ERROR org.apache.predictionio.data.storage.Storage$ [main] - PostgreSQL is not a configured storage source.
+2017-03-16 16:26:48,306 ERROR org.apache.predictionio.data.storage.Storage$ [main] - Error initializing storage client for source 
+java.util.NoSuchElementException: key not found: PIO_STORAGE_SOURCES__TYPE
+	at scala.collection.MapLike$class.default(MapLike.scala:228)
+	at scala.collection.AbstractMap.default(Map.scala:58)
+	at scala.collection.MapLike$class.apply(MapLike.scala:141)
+	at scala.collection.AbstractMap.apply(Map.scala:58)
+	at org.apache.predictionio.data.storage.Storage$.org$apache$predictionio$data$storage$Storage$$updateS2CM(Storage.scala:244)
+	at org.apache.predictionio.data.storage.Storage$$anonfun$sourcesToClientMeta$1.apply(Storage.scala:212)
+	at org.apache.predictionio.data.storage.Storage$$anonfun$sourcesToClientMeta$1.apply(Storage.scala:212)
+	at scala.collection.mutable.MapLike$class.getOrElseUpdate(MapLike.scala:189)
+	at scala.collection.mutable.AbstractMap.getOrElseUpdate(Map.scala:91)
+	at org.apache.predictionio.data.storage.Storage$.sourcesToClientMeta(Storage.scala:212)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:281)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getLEvents(Storage.scala:388)
+	at org.apache.predictionio.data.api.EventServer$.createEventServer(EventServer.scala:617)
+	at org.apache.predictionio.tools.console.Console$.eventserver(Console.scala:893)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:728)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 16:26:59,193 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 16:27:58,506 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 16:42:39,039 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 16:50:12,053 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 16:50:12,162 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 16:50:12,163 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 16:50:12,281 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 16:50:12,456 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 16:50:12,457 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 16:50:12,571 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 16:50:15,757 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 16:50:15,759 ERROR org.apache.predictionio.tools.console.Console$ [main] - Access denied for user 'pio'@'localhost' (using password: YES) (java.sql.SQLException)
+java.sql.SQLException: Access denied for user 'pio'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:959)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3870)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3806)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1686)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2084)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 16:50:15,769 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 16:50:15,776 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: MYSQL; Type: jdbc; Configuration: PASSWORD -> ImArya, URL -> jdbc:mysql://localhost/pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 16:53:33,353 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 16:53:33,359 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 16:53:33,360 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 16:53:33,384 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 16:53:33,451 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 16:53:33,452 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 16:53:33,492 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 16:53:35,008 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 16:53:35,015 ERROR org.apache.predictionio.tools.console.Console$ [main] - Access denied for user 'pio'@'localhost' (using password: YES) (java.sql.SQLException)
+java.sql.SQLException: Access denied for user 'pio'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:959)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3870)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3806)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1686)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2084)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 16:53:35,025 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 16:53:35,033 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: MYSQL; Type: jdbc; Configuration: PASSWORD -> ImArya, URL -> jdbc:mysql://localhost/pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 16:57:58,317 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 16:57:58,327 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 16:57:58,329 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 16:57:58,357 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 16:57:58,427 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 16:57:58,428 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 16:57:58,467 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: PGSQL)...
+2017-03-16 16:57:59,695 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 16:57:59,697 ERROR org.apache.predictionio.tools.console.Console$ [main] - Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections. (org.postgresql.util.PSQLException)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:247)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:65)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:156)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:35)
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:22)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:47)
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:30)
+	at org.postgresql.Driver.makeConnection(Driver.java:414)
+	at org.postgresql.Driver.connect(Driver.java:282)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:61)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:129)
+	... 33 more
+2017-03-16 16:57:59,701 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 16:57:59,706 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: PGSQL; Type: jdbc; Configuration: URL -> jdbc:postgresql://localhost/pio, PASSWORD -> pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 16:58:30,615 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 16:58:30,625 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 16:58:30,627 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 16:58:30,681 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 16:58:30,755 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 16:58:30,755 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 16:58:30,794 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: PGSQL)...
+2017-03-16 16:58:32,035 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 16:58:32,037 ERROR org.apache.predictionio.tools.console.Console$ [main] - Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections. (org.postgresql.util.PSQLException)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:247)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:65)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:156)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:35)
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:22)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:47)
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:30)
+	at org.postgresql.Driver.makeConnection(Driver.java:414)
+	at org.postgresql.Driver.connect(Driver.java:282)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:61)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:129)
+	... 33 more
+2017-03-16 16:58:32,043 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 16:58:32,051 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: PGSQL; Type: jdbc; Configuration: URL -> jdbc:postgresql://localhost/pio, PASSWORD -> pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 16:59:05,566 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 16:59:05,575 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 16:59:05,576 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 16:59:05,603 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 16:59:05,659 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 16:59:05,660 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 16:59:05,700 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: PGSQL)...
+2017-03-16 16:59:06,873 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 16:59:06,876 ERROR org.apache.predictionio.tools.console.Console$ [main] - Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections. (org.postgresql.util.PSQLException)
+org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:247)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:65)
+	at org.postgresql.jdbc2.AbstractJdbc2Connection.<init>(AbstractJdbc2Connection.java:156)
+	at org.postgresql.jdbc3.AbstractJdbc3Connection.<init>(AbstractJdbc3Connection.java:35)
+	at org.postgresql.jdbc3g.AbstractJdbc3gConnection.<init>(AbstractJdbc3gConnection.java:22)
+	at org.postgresql.jdbc4.AbstractJdbc4Connection.<init>(AbstractJdbc4Connection.java:47)
+	at org.postgresql.jdbc4.Jdbc4Connection.<init>(Jdbc4Connection.java:30)
+	at org.postgresql.Driver.makeConnection(Driver.java:414)
+	at org.postgresql.Driver.connect(Driver.java:282)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392)
+	at java.net.Socket.connect(Socket.java:589)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:61)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:129)
+	... 33 more
+2017-03-16 16:59:06,880 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 16:59:06,886 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: PGSQL; Type: jdbc; Configuration: URL -> jdbc:postgresql://localhost/pio, PASSWORD -> pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 16:59:32,859 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 16:59:32,868 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 16:59:32,870 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 16:59:32,900 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 16:59:32,981 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 16:59:32,982 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 16:59:33,023 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 16:59:34,617 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 16:59:34,620 ERROR org.apache.predictionio.tools.console.Console$ [main] - Access denied for user 'pio'@'localhost' (using password: YES) (java.sql.SQLException)
+java.sql.SQLException: Access denied for user 'pio'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:959)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3870)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3806)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1686)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2084)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 16:59:34,624 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 16:59:34,632 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: MYSQL; Type: jdbc; Configuration: PASSWORD -> ImArya, URL -> jdbc:mysql://localhost/pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 17:04:05,340 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 17:06:39,396 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 17:06:39,401 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 17:06:39,402 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 17:06:39,428 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 17:06:39,508 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 17:06:39,508 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 17:06:39,553 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 17:06:41,085 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 17:06:41,088 ERROR org.apache.predictionio.tools.console.Console$ [main] - Access denied for user 'pio'@'localhost' (using password: YES) (java.sql.SQLException)
+java.sql.SQLException: Access denied for user 'pio'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:959)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3870)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3806)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1686)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2084)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 17:06:41,093 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 17:06:41,102 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: MYSQL; Type: jdbc; Configuration: PASSWORD -> ImArya, URL -> jdbc:mysql://127.0.0.1/pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 17:20:42,618 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 17:20:42,626 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 17:20:42,628 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 17:20:42,659 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 17:20:42,731 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 17:20:42,732 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 17:20:42,767 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 17:20:44,230 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 17:20:44,232 ERROR org.apache.predictionio.tools.console.Console$ [main] - Access denied for user 'pio'@'localhost' (using password: YES) (java.sql.SQLException)
+java.sql.SQLException: Access denied for user 'pio'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:959)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3870)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3806)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1686)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2084)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 17:20:44,237 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 17:20:44,243 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: MYSQL; Type: jdbc; Configuration: PASSWORD -> ImArya, URL -> jdbc:mysql://127.0.0.1/pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 17:24:45,119 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 17:24:45,128 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 17:24:45,130 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 17:24:45,160 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 17:24:45,229 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 17:24:45,230 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 17:24:45,264 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 17:24:46,792 ERROR org.apache.predictionio.tools.console.Console$ [main] - Unable to connect to all storage backends successfully. The following shows the error message from the storage backend.
+2017-03-16 17:24:46,795 ERROR org.apache.predictionio.tools.console.Console$ [main] - Access denied for user 'pio'@'localhost' (using password: YES) (java.sql.SQLException)
+java.sql.SQLException: Access denied for user 'pio'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:959)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3870)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3806)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:871)
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1686)
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1207)
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2254)
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2285)
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2084)
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:795)
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:44)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:404)
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:400)
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:327)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:247)
+	at org.apache.commons.dbcp2.DriverManagerConnectionFactory.createConnection(DriverManagerConnectionFactory.java:77)
+	at org.apache.commons.dbcp2.PoolableConnectionFactory.makeObject(PoolableConnectionFactory.java:256)
+	at org.apache.commons.pool2.impl.GenericObjectPool.create(GenericObjectPool.java:868)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:435)
+	at org.apache.commons.pool2.impl.GenericObjectPool.borrowObject(GenericObjectPool.java:363)
+	at org.apache.commons.dbcp2.PoolingDataSource.getConnection(PoolingDataSource.java:134)
+	at scalikejdbc.Commons2ConnectionPool.borrow(Commons2ConnectionPool.scala:46)
+	at scalikejdbc.DB$.autoCommit(DB.scala:214)
+	at org.apache.predictionio.data.storage.jdbc.JDBCEngineManifests.<init>(JDBCEngineManifests.scala:32)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.apache.predictionio.data.storage.Storage$.getDataObject(Storage.scala:306)
+	at org.apache.predictionio.data.storage.Storage$.getDataObjectFromRepo(Storage.scala:266)
+	at org.apache.predictionio.data.storage.Storage$.getMetaDataEngineManifests(Storage.scala:364)
+	at org.apache.predictionio.data.storage.Storage$.verifyAllDataObjects(Storage.scala:341)
+	at org.apache.predictionio.tools.console.Console$.status(Console.scala:1087)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:737)
+	at org.apache.predictionio.tools.console.Console$$anonfun$main$1.apply(Console.scala:696)
+	at scala.Option.map(Option.scala:145)
+	at org.apache.predictionio.tools.console.Console$.main(Console.scala:696)
+	at org.apache.predictionio.tools.console.Console.main(Console.scala)
+2017-03-16 17:24:46,800 ERROR org.apache.predictionio.tools.console.Console$ [main] - Dumping configuration of initialized storage backend sources. Please make sure they are correct.
+2017-03-16 17:24:46,806 ERROR org.apache.predictionio.tools.console.Console$ [main] - Source Name: MYSQL; Type: jdbc; Configuration: PASSWORD -> ImArya, URL -> jdbc:mysql://127.0.0.1/pio, TYPE -> jdbc, USERNAME -> pio
+2017-03-16 17:25:09,499 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting PredictionIO...
+2017-03-16 17:25:09,508 INFO  org.apache.predictionio.tools.console.Console$ [main] - PredictionIO 0.10.0-incubating is installed at /home/giri/Documents/CCProject/PredictionIO
+2017-03-16 17:25:09,509 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting Apache Spark...
+2017-03-16 17:25:09,544 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark is installed at /home/giri/Documents/CCProject/PredictionIO/vendors/spark
+2017-03-16 17:25:09,616 INFO  org.apache.predictionio.tools.console.Console$ [main] - Apache Spark 1.5.0 detected (meets minimum requirement of 1.3.0)
+2017-03-16 17:25:09,616 INFO  org.apache.predictionio.tools.console.Console$ [main] - Inspecting storage backend connections...
+2017-03-16 17:25:09,654 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Meta Data Backend (Source: MYSQL)...
+2017-03-16 17:25:13,212 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Model Data Backend (Source: MYSQL)...
+2017-03-16 17:25:13,548 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Verifying Event Data Backend (Source: MYSQL)...
+2017-03-16 17:25:13,628 INFO  org.apache.predictionio.data.storage.Storage$ [main] - Test writing to Event Store (App Id 0)...
+2017-03-16 17:25:14,466 INFO  org.apache.predictionio.tools.console.Console$ [main] - (sleeping 5 seconds for all messages to show up...)
+2017-03-16 17:25:19,468 INFO  org.apache.predictionio.tools.console.Console$ [main] - Your system is all ready to go.
+2017-03-16 17:26:28,579 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 17:26:34,273 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-4] - Bound to /0.0.0.0:7070
+2017-03-16 17:26:34,282 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-4] - Bound received. EventServer is ready.
+2017-03-16 17:29:51,175 INFO  org.apache.predictionio.tools.console.App$ [main] - Initialized Event Store for this app ID: 1.
+2017-03-16 17:29:51,252 INFO  org.apache.predictionio.tools.console.App$ [main] - Created new app:
+2017-03-16 17:29:51,253 INFO  org.apache.predictionio.tools.console.App$ [main] -       Name: myapp1
+2017-03-16 17:29:51,253 INFO  org.apache.predictionio.tools.console.App$ [main] -         ID: 1
+2017-03-16 17:29:51,254 INFO  org.apache.predictionio.tools.console.App$ [main] - Access Key: Ym4y6Utt1XE91ZABcVQBsBaZJgZoqX6a5p7JF9-3N6r_yKgvpbc_NQN4_BnXZgZH
+2017-03-16 17:30:08,313 INFO  org.apache.predictionio.tools.console.App$ [main] -                 Name |   ID |                                                       Access Key | Allowed Event(s)
+2017-03-16 17:30:08,333 INFO  org.apache.predictionio.tools.console.App$ [main] -               myapp1 |    1 | Ym4y6Utt1XE91ZABcVQBsBaZJgZoqX6a5p7JF9-3N6r_yKgvpbc_NQN4_BnXZgZH | (all)
+2017-03-16 17:30:08,334 INFO  org.apache.predictionio.tools.console.App$ [main] - Finished listing 1 app(s).
+2017-03-16 18:12:01,955 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-16 18:12:01,981 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-16 18:12:01,982 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-16 18:12:01,983 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-16 18:12:01,983 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-16 18:12:11,392 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[0minfo[0m] [0mSet current project to bin (in build file:/home/giri/Documents/CCProject/PredictionIO/bin/)[0m
+2017-03-16 18:12:12,571 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[0minfo[0m] [0mUpdating {file:/home/giri/Documents/CCProject/PredictionIO/bin/}bin...[0m
+2017-03-16 18:12:13,316 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.4 ...[0m
+2017-03-16 18:12:13,772 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - 
+2017-03-16 18:12:13,773 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - M[2K[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-compiler;2.10.4 ...[0m
+2017-03-16 18:12:13,862 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - 
+2017-03-16 18:12:13,865 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - M[2K[0m[[0minfo[0m] [0mResolving org.scala-lang#scala-reflect;2.10.4 ...[0m
+2017-03-16 18:12:14,122 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - 
+2017-03-16 18:12:14,123 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - M[2K[0m[[0minfo[0m] [0mResolving org.scala-lang#jline;2.10.4 ...[0m
+2017-03-16 18:12:14,212 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - 
+2017-03-16 18:12:14,212 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - M[2K[0m[[0minfo[0m] [0mResolving org.fusesource.jansi#jansi;1.4 ...[0m
+2017-03-16 18:12:14,494 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[0minfo[0m] [0mDone updating.[0m
+2017-03-16 18:12:14,900 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[33mwarn[0m] [0mNo main class detected[0m
+2017-03-16 18:12:15,060 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[0minfo[0m] [0mPackaging /home/giri/Documents/CCProject/PredictionIO/bin/target/scala-2.10/bin_2.10-0.1-SNAPSHOT.jar ...[0m
+2017-03-16 18:12:15,104 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[0minfo[0m] [0mDone packaging.[0m
+2017-03-16 18:12:15,154 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[32msuccess[0m] [0mTotal time: 3 s, completed Mar 16, 2017 6:12:15 PM[0m
+2017-03-16 18:12:15,351 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid command: assemblyPackageDependency[0m
+2017-03-16 18:12:15,352 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid project ID: assemblyPackageDependency[0m
+2017-03-16 18:12:15,352 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mExpected ':' (if selecting a configuration)[0m
+2017-03-16 18:12:15,352 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid key: assemblyPackageDependency (similar: sbtDependency)[0m
+2017-03-16 18:12:15,352 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0massemblyPackageDependency[0m
+2017-03-16 18:12:15,352 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0m                         ^[0m
+2017-03-16 18:12:15,607 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2017-03-16 18:12:46,429 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using existing engine manifest JSON at /home/giri/Documents/CCProject/PredictionIO/bin/manifest.json
+2017-03-16 18:12:46,449 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-16 18:12:46,457 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-16 18:12:46,458 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-16 18:12:46,459 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-16 18:12:46,459 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-16 18:12:53,808 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid command: assemblyPackageDependency[0m
+2017-03-16 18:12:53,809 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid project ID: assemblyPackageDependency[0m
+2017-03-16 18:12:53,810 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mExpected ':' (if selecting a configuration)[0m
+2017-03-16 18:12:53,810 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid key: assemblyPackageDependency (similar: sbtDependency)[0m
+2017-03-16 18:12:53,810 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0massemblyPackageDependency[0m
+2017-03-16 18:12:53,811 ERROR org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0m                         ^[0m
+2017-03-16 18:12:53,858 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2017-03-16 18:13:25,616 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using existing engine manifest JSON at /home/giri/Documents/CCProject/PredictionIO/bin/manifest.json
+2017-03-16 18:13:25,621 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-16 18:13:29,544 ERROR org.apache.predictionio.tools.console.Console$ [main] - Engine RdtNs854KP0FRpqZYYhIxJQND9kmbe8L 15f531d39dc09cc9b5c41b16dada3a6699397d83 cannot be found in the system.
+2017-03-16 18:13:29,545 ERROR org.apache.predictionio.tools.console.Console$ [main] - Possible reasons:
+2017-03-16 18:13:29,546 ERROR org.apache.predictionio.tools.console.Console$ [main] - - the engine is not yet built by the 'build' command;
+2017-03-16 18:13:29,546 ERROR org.apache.predictionio.tools.console.Console$ [main] - - the meta data store is offline.
+2017-03-16 18:15:37,169 INFO  org.apache.predictionio.tools.console.App$ [main] -                 Name |   ID |                                                       Access Key | Allowed Event(s)
+2017-03-16 18:15:37,192 INFO  org.apache.predictionio.tools.console.App$ [main] -               myapp1 |    1 | Ym4y6Utt1XE91ZABcVQBsBaZJgZoqX6a5p7JF9-3N6r_yKgvpbc_NQN4_BnXZgZH | (all)
+2017-03-16 18:15:37,193 INFO  org.apache.predictionio.tools.console.App$ [main] - Finished listing 1 app(s).
+2017-03-16 18:19:47,228 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using existing engine manifest JSON at /home/giri/Documents/CCProject/PredictionIO/bin/manifest.json
+2017-03-16 18:19:47,233 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-16 18:19:47,236 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-16 18:19:47,236 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-16 18:19:47,237 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-16 18:19:47,238 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-16 18:19:51,917 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[0minfo[0m] [0mSet current project to bin (in build file:/home/giri/Documents/CCProject/PredictionIO/bin/)[0m
+2017-03-16 18:19:52,847 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[33mwarn[0m] [0mNo main class detected[0m
+2017-03-16 18:19:52,910 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[32msuccess[0m] [0mTotal time: 1 s, completed Mar 16, 2017 6:19:52 PM[0m
+2017-03-16 18:19:53,094 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid command: assemblyPackageDependency[0m
+2017-03-16 18:19:53,095 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid project ID: assemblyPackageDependency[0m
+2017-03-16 18:19:53,095 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mExpected ':' (if selecting a configuration)[0m
+2017-03-16 18:19:53,096 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid key: assemblyPackageDependency (similar: sbtDependency)[0m
+2017-03-16 18:19:53,096 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0massemblyPackageDependency[0m
+2017-03-16 18:19:53,096 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0m                         ^[0m
+2017-03-16 18:19:53,134 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2017-03-16 18:30:15,380 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using existing engine manifest JSON at /home/giri/Documents/CCProject/PredictionIO/bin/manifest.json
+2017-03-16 18:30:15,385 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-16 18:30:15,388 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-16 18:30:15,389 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-16 18:30:15,390 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-16 18:30:15,391 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-16 18:30:15,685 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2017-03-16 18:30:45,455 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using existing engine manifest JSON at /home/giri/Documents/CCProject/PredictionIO/bin/manifest.json
+2017-03-16 18:30:45,459 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-16 18:30:45,462 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-16 18:30:45,463 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-16 18:30:45,464 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-16 18:30:45,465 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-16 18:30:45,705 ERROR org.apache.predictionio.tools.console.Console$ [Thread-2] - OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00000000c0000000, 716177408, 0) failed; error='Cannot allocate memory' (errno=12)
+2017-03-16 18:30:45,707 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - #
+2017-03-16 18:30:45,707 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - # There is insufficient memory for the Java Runtime Environment to continue.
+2017-03-16 18:30:45,707 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - # Native memory allocation (mmap) failed to map 716177408 bytes for committing reserved memory.
+2017-03-16 18:30:45,707 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - # An error report file with more information is saved as:
+2017-03-16 18:30:45,707 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - # /home/giri/Documents/CCProject/PredictionIO/bin/hs_err_pid24172.log
+2017-03-16 18:30:45,714 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2017-03-16 18:42:46,138 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using existing engine manifest JSON at /home/giri/Documents/CCProject/PredictionIO/bin/manifest.json
+2017-03-16 18:42:46,176 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-16 18:42:46,218 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-16 18:42:46,219 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-16 18:42:46,220 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-16 18:42:46,221 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-16 18:42:55,150 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[0minfo[0m] [0mSet current project to bin (in build file:/home/giri/Documents/CCProject/PredictionIO/bin/)[0m
+2017-03-16 18:42:56,603 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[33mwarn[0m] [0mNo main class detected[0m
+2017-03-16 18:42:56,755 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[32msuccess[0m] [0mTotal time: 1 s, completed Mar 16, 2017 6:42:56 PM[0m
+2017-03-16 18:42:56,933 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid command: assemblyPackageDependency[0m
+2017-03-16 18:42:56,934 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid project ID: assemblyPackageDependency[0m
+2017-03-16 18:42:56,934 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mExpected ':' (if selecting a configuration)[0m
+2017-03-16 18:42:56,934 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid key: assemblyPackageDependency (similar: sbtDependency)[0m
+2017-03-16 18:42:56,934 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0massemblyPackageDependency[0m
+2017-03-16 18:42:56,934 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0m                         ^[0m
+2017-03-16 18:42:57,010 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2017-03-16 18:43:54,806 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using existing engine manifest JSON at /home/giri/Documents/CCProject/PredictionIO/bin/manifest.json
+2017-03-16 18:43:54,811 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-16 18:43:54,814 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-16 18:43:54,815 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-16 18:43:54,816 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-16 18:43:54,816 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-16 18:43:59,439 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[0minfo[0m] [0mSet current project to bin (in build file:/home/giri/Documents/CCProject/PredictionIO/bin/)[0m
+2017-03-16 18:44:00,345 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[33mwarn[0m] [0mNo main class detected[0m
+2017-03-16 18:44:00,423 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[32msuccess[0m] [0mTotal time: 1 s, completed Mar 16, 2017 6:44:00 PM[0m
+2017-03-16 18:44:00,591 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid command: assemblyPackageDependency[0m
+2017-03-16 18:44:00,592 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid project ID: assemblyPackageDependency[0m
+2017-03-16 18:44:00,592 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mExpected ':' (if selecting a configuration)[0m
+2017-03-16 18:44:00,592 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0mNot a valid key: assemblyPackageDependency (similar: sbtDependency)[0m
+2017-03-16 18:44:00,592 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0massemblyPackageDependency[0m
+2017-03-16 18:44:00,592 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - [0m[[31merror[0m] [0m                         ^[0m
+2017-03-16 18:44:00,665 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2017-03-16 18:47:13,022 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using existing engine manifest JSON at /home/giri/Documents/CCProject/PredictionIO/bin/manifest.json
+2017-03-16 18:47:13,027 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-16 18:47:13,029 INFO  org.apache.predictionio.tools.console.Console$ [main] - Using command '/home/giri/Documents/CCProject/PredictionIO/sbt/sbt' at the current working directory to build.
+2017-03-16 18:47:13,030 INFO  org.apache.predictionio.tools.console.Console$ [main] - If the path above is incorrect, this process will fail.
+2017-03-16 18:47:13,031 INFO  org.apache.predictionio.tools.console.Console$ [main] - Uber JAR disabled, but current working directory does not look like an engine project directory. Please delete lib/pio-assembly-0.10.0-incubating.jar manually.
+2017-03-16 18:47:13,031 INFO  org.apache.predictionio.tools.console.Console$ [main] - Going to run: /home/giri/Documents/CCProject/PredictionIO/sbt/sbt  package assemblyPackageDependency
+2017-03-16 18:47:13,268 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - #
+2017-03-16 18:47:13,268 ERROR org.apache.predictionio.tools.console.Console$ [Thread-2] - OpenJDK 64-Bit Server VM warning: INFO: os::commit_memory(0x00000000c0000000, 716177408, 0) failed; error='Cannot allocate memory' (errno=12)
+2017-03-16 18:47:13,268 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - # There is insufficient memory for the Java Runtime Environment to continue.
+2017-03-16 18:47:13,268 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - # Native memory allocation (mmap) failed to map 716177408 bytes for committing reserved memory.
+2017-03-16 18:47:13,268 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - # An error report file with more information is saved as:
+2017-03-16 18:47:13,269 INFO  org.apache.predictionio.tools.console.Console$ [Thread-1] - # /home/giri/Documents/CCProject/PredictionIO/bin/hs_err_pid25367.log
+2017-03-16 18:47:13,345 ERROR org.apache.predictionio.tools.console.Console$ [main] - Return code of previous step is 1. Aborting.
+2017-03-16 19:05:29,925 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 19:05:37,530 WARN  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-2] - Bind to /0.0.0.0:7070 failed
+2017-03-16 19:05:37,541 ERROR org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-2] - Command failed.
+2017-03-16 19:05:53,309 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 19:05:57,427 WARN  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-3] - Bind to /0.0.0.0:7070 failed
+2017-03-16 19:05:57,434 ERROR org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-7] - Command failed.
+2017-03-16 19:06:12,094 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 19:06:15,993 WARN  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-5] - Bind to /0.0.0.0:7070 failed
+2017-03-16 19:06:16,004 ERROR org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-7] - Command failed.
+2017-03-16 19:06:44,546 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 19:06:48,425 WARN  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-2] - Bind to /0.0.0.0:7070 failed
+2017-03-16 19:06:48,428 ERROR org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-2] - Command failed.
+2017-03-16 19:08:03,408 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-16 19:08:07,270 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-2] - Bound to /0.0.0.0:7070
+2017-03-16 19:08:07,273 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-2] - Bound received. EventServer is ready.
+2017-03-18 16:41:15,014 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-18 16:41:23,067 WARN  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-3] - Bind to /0.0.0.0:7070 failed
+2017-03-18 16:41:23,079 ERROR org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-5] - Command failed.
+2017-03-18 16:41:38,446 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-18 16:41:42,440 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-3] - Bound to /0.0.0.0:7070
+2017-03-18 16:41:42,442 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-3] - Bound received. EventServer is ready.
+2017-03-18 18:12:47,046 INFO  org.apache.predictionio.tools.console.App$ [main] -                 Name |   ID |                                                       Access Key | Allowed Event(s)
+2017-03-18 18:12:47,308 INFO  org.apache.predictionio.tools.console.App$ [main] -               myapp1 |    1 | Ym4y6Utt1XE91ZABcVQBsBaZJgZoqX6a5p7JF9-3N6r_yKgvpbc_NQN4_BnXZgZH | (all)
+2017-03-18 18:12:47,309 INFO  org.apache.predictionio.tools.console.App$ [main] - Finished listing 1 app(s).
+2017-03-19 00:08:10,087 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-19 00:08:17,964 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-2] - Bound to /0.0.0.0:7070
+2017-03-19 00:08:17,965 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-2] - Bound received. EventServer is ready.
+2017-03-19 02:08:10,999 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-19 02:08:18,852 WARN  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-2] - Bind to /0.0.0.0:7070 failed
+2017-03-19 02:08:18,856 ERROR org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-2] - Command failed.
+2017-03-19 02:08:50,330 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-19 02:08:53,097 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-7] - Bound to /0.0.0.0:7070
+2017-03-19 02:08:53,099 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-7] - Bound received. EventServer is ready.
+2017-03-20 10:41:54,384 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-20 10:41:57,322 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-2] - Bound to /0.0.0.0:7070
+2017-03-20 10:41:57,323 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-2] - Bound received. EventServer is ready.
+2017-03-20 10:42:21,569 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-20 10:42:24,213 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-2] - Bound to /0.0.0.0:7070
+2017-03-20 10:42:24,215 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-2] - Bound received. EventServer is ready.
+2017-03-20 11:03:38,221 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-20 11:03:41,101 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-4] - Bound to /0.0.0.0:7070
+2017-03-20 11:03:41,103 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-4] - Bound received. EventServer is ready.
+2017-03-20 11:06:27,515 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-20 11:06:30,358 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-5] - Bound to /0.0.0.0:7070
+2017-03-20 11:06:30,360 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-5] - Bound received. EventServer is ready.
+2017-03-20 11:09:25,310 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-20 11:09:26,681 ERROR org.apache.predictionio.tools.console.Console$ [main] - Engine RdtNs854KP0FRpqZYYhIxJQND9kmbe8L 15f531d39dc09cc9b5c41b16dada3a6699397d83 cannot be found in the system.
+2017-03-20 11:09:26,682 ERROR org.apache.predictionio.tools.console.Console$ [main] - Possible reasons:
+2017-03-20 11:09:26,682 ERROR org.apache.predictionio.tools.console.Console$ [main] - - the engine is not yet built by the 'build' command;
+2017-03-20 11:09:26,683 ERROR org.apache.predictionio.tools.console.Console$ [main] - - the meta data store is offline.
+2017-03-20 11:09:35,503 WARN  org.apache.predictionio.tools.console.Template$ [main] - template.json does not exist. Template metadata will not be available. (This is safe to ignore if you are not working on a template.)
+2017-03-20 11:09:36,849 ERROR org.apache.predictionio.tools.console.Console$ [main] - Engine RdtNs854KP0FRpqZYYhIxJQND9kmbe8L 15f531d39dc09cc9b5c41b16dada3a6699397d83 cannot be found in the system.
+2017-03-20 11:09:36,850 ERROR org.apache.predictionio.tools.console.Console$ [main] - Possible reasons:
+2017-03-20 11:09:36,850 ERROR org.apache.predictionio.tools.console.Console$ [main] - - the engine is not yet built by the 'build' command;
+2017-03-20 11:09:36,851 ERROR org.apache.predictionio.tools.console.Console$ [main] - - the meta data store is offline.
+2017-03-20 11:10:00,475 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-20 11:10:03,098 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-4] - Bound to /0.0.0.0:7070
+2017-03-20 11:10:03,099 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-4] - Bound received. EventServer is ready.
+2017-03-20 14:42:50,758 INFO  org.apache.predictionio.tools.console.Console$ [main] - Creating Event Server at 0.0.0.0:7070
+2017-03-20 14:42:59,736 INFO  spray.can.server.HttpListener [EventServerSystem-akka.actor.default-dispatcher-4] - Bound to /0.0.0.0:7070
+2017-03-20 14:42:59,738 INFO  org.apache.predictionio.data.api.EventServerActor [EventServerSystem-akka.actor.default-dispatcher-4] - Bound received. EventServer is ready.
