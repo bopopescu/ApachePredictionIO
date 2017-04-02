@@ -40,3 +40,9 @@ Documentation regarding Installation of apache-prediction-io and Running the app
 
 5. Below is the snapshot of the application :<br />
    ![Alt text](/AppFront.png?raw=true "Optional Title")
+
+6. The Ecommerce recommendation is only applied to products.jsp page (ie) Mobiles section in Products.<br />
+   ![Alt text](/AppProducts.png?raw=true "Optional Title")
+
+
+   
